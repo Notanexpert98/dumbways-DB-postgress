@@ -1,0 +1,171 @@
+<!-- Halaman Index -->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riko Website</title>
+    <style>
+      *, body { margin: 0; } /* width */ ::-webkit-scrollbar { width: 10px; } /*
+      Track */ ::-webkit-scrollbar-track { background: black; } /* Handle */
+      ::-webkit-scrollbar-thumb { background: white; } /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover { background: #555; }
+    </style>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigasi Bar -->
+    <nav style="background-color: grey; height: 60px; padding-top: 3px">
+      <ul
+        style="
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+          list-style-type: none;
+          align-items: center;
+          padding: 10px;
+          padding-left: 15px;
+          padding-right: 15px;
+          font-family: SUSE, sans-serif;
+          font-weight: 600;
+          font-size: medium;
+        "
+      >
+        <li>
+          <img
+            style="width: fit-content; height: 35px"
+            src="https://dumbways.id/assets/images/brandred.png"
+            alt=""
+          />
+        </li>
+        <li><a
+            style="text-decoration: none; color: white"
+            href="/"
+          >Home</a></li>
+        <li>
+          <a style="text-decoration: none; color: white" href="/blog">Blog</a>
+        </li>
+        <li class="nav_item">
+          <a
+            style="text-decoration: none; color: white"
+            href="/username"
+          >Login</a>
+        </li>
+        <li style="width: 100%; display: flex; justify-content: flex-end">
+          <a
+            style="
+              text-decoration: none;
+              color: white;
+              background-color: orangered;
+              padding: 12px;
+              border-radius: 5px;
+            "
+            href="week_2.html"
+          >
+            Contact Me</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Card Section -->
+    <div
+      style="
+        background-color: whitesmoke;
+        height: 20px;
+        box-shadow: 0px 5px 10px grey;
+      "
+    ></div>
+    <div id="account">
+      <img
+        style="
+          width: 400px;
+          height: 400px;
+
+          object-fit: contain;
+          display: flex;
+          padding-top: 30px;
+          margin: auto;
+        "
+        src="./image/riko.png"
+      />
+
+      <h1 style="text-align: center">Riko Oktari Heriawan</h1>
+      <br />
+      <p style="text-align: center; font-size: 22px">
+        Just fun for learn new thing ...
+      </p>
+      <br />
+      <br />
+      <table id="table1">
+        <tr style="border: 2px solid black">
+          <th style="border: 2px solid black">Company</th>
+          <th style="border: 2px solid black">Year</th>
+        </tr>
+        <tr style="border: 2px solid black">
+          <td style="border: 2px solid black">Riko SPX Dev</td>
+          <td style="border: 2px solid black">2024</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Filter Section -->
+
+    <section id="filter_section">
+      <div id="filter_div">
+        <input
+          onclick="gettestimonialall()"
+          type="button"
+          value="All"
+          class="filter_rate"
+        />
+        <input
+          onclick="gettestimonialbyrate(1)"
+          type="button"
+          value="Star 1"
+          class="filter_rate"
+        />
+        <input
+          onclick="gettestimonialbyrate(2)"
+          type="button"
+          value="Star 2"
+          class="filter_rate"
+        />
+        <input
+          onclick="gettestimonialbyrate(3)"
+          type="button"
+          value="Star 3"
+          class="filter_rate"
+        />
+        <input
+          onclick="gettestimonialbyrate(4)"
+          type="button"
+          value="Star 4"
+          class="filter_rate"
+        />
+        <input
+          onclick="gettestimonialbyrate(5)"
+          type="button"
+          value="Star 5"
+          class="filter_rate"
+        />
+      </div>
+    </section>
+    <div id="filter_content"></div>
+    <script src="ajax.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"
+    ></script>
+  </body>
+</html>

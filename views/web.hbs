@@ -1,0 +1,170 @@
+<!-- Halaman Identitas -->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riko Website</title>
+    <style>
+      *, body { margin: 0px; } /* width */ ::-webkit-scrollbar { width: 10px; }
+      /* Track */ ::-webkit-scrollbar-track { background: black; } /* Handle */
+      ::-webkit-scrollbar-thumb { background: white; } /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover { background: #555; }
+    </style>
+    <link rel="stylesheet" href="web.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav style="background-color: grey; height: 60px; padding-top: 3px">
+      <ul
+        style="
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+          list-style-type: none;
+          align-items: center;
+          padding: 10px;
+          padding-left: 15px;
+          padding-right: 15px;
+          font-family: SUSE, sans-serif;
+          font-weight: 600;
+          font-size: medium;
+        "
+      >
+        <li>
+          <img
+            style="width: fit-content; height: 35px"
+            src="https://dumbways.id/assets/images/brandred.png"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="text-decoration: none; color: white" href="/">Home</a>
+        </li>
+        <li>
+          <a style="text-decoration: none; color: white" href="/blog">Blog</a>
+        </li>
+        <li style="width: 100%; display: flex; justify-content: flex-end">
+          <a
+            style="
+              text-decoration: none;
+              color: white;
+              background-color: orangered;
+              padding: 12px;
+              border-radius: 5px;
+            "
+            href=""
+          >
+            Contact Me</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div
+      style="
+        background-color: whitesmoke;
+        height: 20px;
+        box-shadow: 0px 5px 10px grey;
+      "
+    ></div>
+    <div class="formcuy">
+
+      <form
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 25px;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 50px;
+          margin-top: 60px;
+          padding-bottom: 10px;
+        "
+      >
+        <h1 class="fs-1 fw-bold text-center">Sign in</h1>
+        <input
+          placeholder="Enter your name ...."
+          style="
+            width: 450px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            border-width: 2px;
+            border-radius: 5px;
+          "
+          type="text"
+          id="text1"
+        />
+        <input
+          placeholder="Enter your email ...."
+          style="
+            width: 450px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            border-width: 2px;
+            border-radius: 5px;
+          "
+          type="text"
+          id="text2"
+        />
+        <input
+          placeholder="Enter your phone ...."
+          style="
+            width: 450px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            border-width: 2px;
+            border-radius: 5px;
+          "
+          type="text"
+          id="text3"
+        />
+        <select
+          style="
+            width: 450px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            border-width: 2px;
+            border-radius: 5px;
+          "
+          id="select1"
+        >
+          <option>Select an option ....</option>
+          <option>Backend Developer</option>
+          <option>Frontend Developer</option>
+        </select>
+        <input
+          placeholder="Enter your password ...."
+          style="
+            width: 450px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            border-width: 2px;
+            border-radius: 5px;
+          "
+          type="text"
+          id="text3"
+        />
+
+        <input type="submit" id="submitblog" />
+      </form>
+    </div>
+  </body>
+  <script src="web.js"></script>
+</html>

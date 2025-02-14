@@ -1,0 +1,177 @@
+body {
+  background-color: orangered;
+  font-family: "Rubik", sans-serif;
+}
+
+#containerform {
+  background-color: rgb(255, 255, 255);
+  width: 600px;
+  height: 560px;
+  margin: auto;
+  padding: 30px;
+  display: flex;
+  margin-bottom: 70px;
+
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 3px 3px 10px 2px black;
+}
+
+#inputtitle-blog {
+  height: 70px;
+  border-radius: 6px;
+  border: 1px solid rgb(187, 186, 186);
+  background-color: rgba(236, 236, 236, 0.897);
+}
+
+#inputcontent-blog {
+  border-radius: 10px;
+  border: 1px solid rgb(187, 186, 186);
+  background-color: rgba(236, 236, 236, 0.897);
+}
+
+#inputfile-blog {
+  border: 1px solid rgb(187, 186, 186);
+  border-radius: 6px;
+  width: 100%;
+  background-color: rgba(236, 236, 236, 0.897);
+}
+#submit-blog {
+  text-decoration: none;
+  color: white;
+  background-color: orangered;
+  padding: 10px;
+  width: 120px;
+  border-radius: 5px;
+  margin: auto;
+}
+
+#slot-blog {
+  margin: auto;
+  width: 1350px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: -35px;
+}
+
+.dinamisslot {
+  background-color: rgb(255, 255, 255);
+  width: 350px;
+  height: 550px;
+  margin: 20px;
+  padding-top: -10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px 2px black;
+}
+
+.card_content {
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+}
+#img_card {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  margin-bottom: -20px;
+}
+
+.font_slot {
+  font-size: 13px;
+}
+
+.title_front {
+  color: white;
+  font-size: 35px;
+}
+
+h1 {
+  font-size: 35px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 33px;
+}
+p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+hr {
+  border: 2px solid rgb(24, 23, 23);
+  width: 90%;
+  margin: auto;
+  border-radius: 3px;
+  margin-bottom: 70px;
+}
+
+.hamburger_subset {
+  padding: 5px;
+  font-weight: 600;
+  text-align: center;
+  background-color: rgb(235, 233, 233);
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 3px solid black;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hamburger_subset:hover {
+  opacity: 1;
+  background-color: orange;
+}
+
+.hamburger_subset a {
+  text-decoration: none;
+  color: black;
+}
+
+.hamburger_hide {
+  display: none;
+}
+
+@media (max-width: 428px) {
+  body {
+    height: auto;
+  }
+
+  .nav_item a {
+    display: none;
+  }
+  #containerform {
+    width: 78%;
+    height: 470px;
+  }
+  #slot-blog {
+    width: 90%;
+    height: 600px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .dinamisslot {
+    display: flex;
+  }
+}
+
+@media (min-width: 429px) {
+  #hamburger {
+    display: none;
+  }
+
+  .hamburger_subset {
+    display: none;
+  }
+}

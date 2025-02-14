@@ -1,0 +1,79 @@
+body {
+  background-color: orangered;
+}
+
+#account {
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  width: 500px;
+  height: 650px;
+  background-color: white;
+  box-shadow: 5px 5px 10px 3px black;
+}
+
+#table1 {
+  margin: auto;
+  border-collapse: collapse;
+  width: 300px;
+  height: 60px;
+  text-align: center;
+}
+
+#filter_section {
+  justify-content: center;
+  display: flex;
+}
+
+#filter_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  padding: 15px;
+  border-bottom: 3px solid black;
+  border-top: 3px solid black;
+  border-radius: 2px;
+  gap: 20px;
+}
+
+.filter_rate {
+  padding: 6px 15px 6px 15px;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border-radius: 3px;
+  font-weight: 700;
+  border: 2px solid black;
+  transition: 0.3s;
+}
+
+.filter_rate:hover {
+  background-color: orangered;
+  color: white;
+  border: 2px solid white;
+}
+
+#filter_content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  gap: 50px;
+}
+
+.testimonial_sub {
+  display: inline-block;
+  justify-content: center;
+  flex-direction: row;
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  text-align: center;
+  padding-top: 25px;
+  border: 3px solid black;
+  box-shadow: 1px 1px 1px 1px black;
+}
