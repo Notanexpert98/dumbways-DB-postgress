@@ -8,11 +8,11 @@ app.use("/image", express.static(path.join(__dirname, "image")));
 app.use(express.static(path.join(__dirname, "css")));
 app.use(express.urlencoded({ extended: true }));
 const config = require("./config/config.json");
-const { Sequelize, QueryTypes } = require("sequelize");
+const { Sequelize, QueryTypes, where } = require("sequelize");
 const { title } = require("process");
 const { type } = require("os");
 const sequelize = new Sequelize(config.development);
-const BlogModel = require("./models/blog.js");
+const blogmodel = require("./models").Blogs;
 
 // push data input blog ke cons array
 
@@ -44,57 +44,55 @@ function username_page(req, res) {
 }
 
 async function output_page(req, res) {
-  const query = `SELECT * FROM public."Blogs"`;
-  const result = await sequelize.query(query, { type: QueryTypes.SELECT });
+  const result = await blogmodel.findAll();
+
   res.render("output_blog.hbs", { Blogs: result });
 }
 
 async function outputviews_page(req, res) {
   const { inputtitle, inputcontent } = req.body;
-  const query = `INSERT INTO public."Blogs"(id,"Title","Content","Image","createdAt","updatedAt") VALUES (DEFAULT,'${inputtitle}','${inputcontent}','./image/riko.png',now(),now())`;
-  const result = await sequelize.query(query, { type: QueryTypes.INSERT });
+  const result = await blogmodel.create({
+    Title: inputtitle,
+    Content: inputcontent,
+    Image: "./image/riko.png",
+  });
+
   res.redirect("/output");
 }
 
 async function delblog(req, res) {
   const { id } = req.params;
-  let query = `SELECT * FROM public."Blogs" WHERE id=${id}`;
-
-  let result = await sequelize.query(query, { type: QueryTypes.SELECT });
-  if (!result.length) res.render("TIDAK MENEMUKAN APAPUN");
-
-  query = `DELETE FROM public."Blogs" WHERE id=${id}`;
-  result = await sequelize.query(query, { type: QueryTypes.DELETE });
+  let result = await blogmodel.findOne({ where: { id: id } });
+  if (!result) res.render("TIDAK MENEMUKAN APAPUN");
+  result = await blogmodel.destroy({ where: { id: id } });
   res.redirect("/output");
 }
 
 async function editblogview_page(req, res) {
   const { id } = req.params;
-  let query = `SELECT * FROM public."Blogs" WHERE id=${id}`;
-
-  let result = await sequelize.query(query, { type: QueryTypes.SELECT });
-  if (!result.length) res.render("TIDAK MENEMUKAN APAPUN");
-
-  res.render("Editblog.hbs", { Blogs: result[0] });
+  let result = await blogmodel.findOne({ where: { id: id } });
+  if (!result) res.render("TIDAK MENEMUKAN APAPUN");
+  res.render("Editblog.hbs", { Blogs: result });
 }
 
 async function editblog_page(req, res) {
   const { id } = req.params;
   const { inputtitle, inputcontent } = req.body;
-  const query = `UPDATE public."Blogs" SET "Title"='${inputtitle}', "Content"='${inputcontent}' WHERE id=${id}`;
-  const result = await sequelize.query(query, { type: QueryTypes.UPDATE });
+  const result = await blogmodel.update(
+    { Title: inputtitle, Content: inputcontent },
+    { where: { id: id } }
+  );
 
   res.redirect("/output");
 }
 
 async function blog_detail(req, res) {
   const { id } = req.params;
-  const query = `SELECT * FROM public."Blogs" WHERE id=${id}`;
-  const result = await sequelize.query(query, { type: QueryTypes.SELECT });
-  if (!result.length) {
+  const result = await blogmodel.findOne({ where: { id: id } });
+  if (!result) {
     res.render("TIDAK MENEMUKAN APAPUN");
   } else {
-    res.render("blog_detail.hbs", { Blogs: result[0] });
+    res.render("blog_detail.hbs", { Blogs: result });
   }
 }
 
