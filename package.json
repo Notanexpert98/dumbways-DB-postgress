@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "express": "^4.21.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.18.1",
     "hbs": "^4.2.0",
     "it": "^0.2.2",
     "pg": "^8.13.1",

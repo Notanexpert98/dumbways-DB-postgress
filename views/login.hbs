@@ -55,6 +55,12 @@
         <li>
           <a style="text-decoration: none; color: white" href="/blog">Blog</a>
         </li>
+        <li class="nav_item">
+          <a
+            style="text-decoration: none; color: white"
+            href="/username"
+          >Register</a>
+        </li>
         <li style="width: 100%; display: flex; justify-content: flex-end">
           <a
             style="
@@ -78,9 +84,18 @@
         box-shadow: 0px 5px 10px grey;
       "
     ></div>
+
+    {{#if messages.error_login}}<div
+        class="alert alert-primary"
+        role="alert"
+        style="text-align: center; margin-top:30px;"
+      >{{messages.error_login}}</div>{{/if}}
+
     <div class="formcuy">
 
       <form
+        action="/login"
+        method="post"
         style="
           display: flex;
           flex-direction: column;
@@ -89,25 +104,14 @@
           padding-left: 15px;
           padding-right: 15px;
           padding-top: 50px;
-          margin-top: 60px;
+          margin-top: 130px;
           padding-bottom: 10px;
         "
       >
-        <h1 class="fs-1 fw-bold text-center">Sign in</h1>
+        <h1 class="fs-1 fw-bold text-center">Login Here</h1>
+
         <input
-          placeholder="Enter your name ...."
-          style="
-            width: 450px;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            border-width: 2px;
-            border-radius: 5px;
-          "
-          type="text"
-          id="text1"
-        />
-        <input
+          name="email_login"
           placeholder="Enter your email ...."
           style="
             width: 450px;
@@ -120,35 +124,9 @@
           type="text"
           id="text2"
         />
+
         <input
-          placeholder="Enter your phone ...."
-          style="
-            width: 450px;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            border-width: 2px;
-            border-radius: 5px;
-          "
-          type="text"
-          id="text3"
-        />
-        <select
-          style="
-            width: 450px;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            border-width: 2px;
-            border-radius: 5px;
-          "
-          id="select1"
-        >
-          <option>Select an option ....</option>
-          <option>Backend Developer</option>
-          <option>Frontend Developer</option>
-        </select>
-        <input
+          name="pass_login"
           placeholder="Enter your password ...."
           style="
             width: 450px;
@@ -158,11 +136,11 @@
             border-width: 2px;
             border-radius: 5px;
           "
-          type="text"
+          type="password"
           id="text3"
         />
 
-        <input type="submit" id="submitblog" />
+        <input type="submit" id="submitblog" value="Login" />
       </form>
     </div>
   </body>
