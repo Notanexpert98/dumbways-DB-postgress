@@ -24,9 +24,15 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
   </head>
-  <body>
-    <nav style="background-color: grey; height: 60px; padding-top: 3px">
+  <body style="background-color: orangered;">
+    <nav style="background-color: grey; padding-top: 3px">
       <ul
         style="
           display: flex;
@@ -44,7 +50,7 @@
       >
         <li>
           <img
-            style="width: fit-content; height: 35px"
+            style="width: fit-content; height: 30px"
             src="https://dumbways.id/assets/images/brandred.png"
             alt=""
           />
@@ -78,11 +84,7 @@
     </nav>
 
     <div
-      style="
-        background-color: whitesmoke;
-        height: 20px;
-        box-shadow: 0px 5px 10px grey;
-      "
+      style="height: 10px; background-color:whitesmoke; margin-top:-17px; box-shadow: 0px 5px 10px grey"
     ></div>
 
     {{#if messages.error_login}}<div
@@ -91,58 +93,40 @@
         style="text-align: center; margin-top:30px;"
       >{{messages.error_login}}</div>{{/if}}
 
-    <div class="formcuy">
+    {{! Form Login Section }}
 
-      <form
-        action="/login"
-        method="post"
-        style="
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 25px;
-          padding-left: 15px;
-          padding-right: 15px;
-          padding-top: 50px;
-          margin-top: 130px;
-          padding-bottom: 10px;
-        "
-      >
-        <h1 class="fs-1 fw-bold text-center">Login Here</h1>
-
+    <form class="mt-5" action="/login" method="post">
+      <h2 class="text-center">Login Disini</h2>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
         <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
           name="email_login"
           placeholder="Enter your email ...."
-          style="
-            width: 450px;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            border-width: 2px;
-            border-radius: 5px;
-          "
-          type="text"
-          id="text2"
         />
-
+        <div id="emailHelp" class="form-text">We'll never share your email with
+          anyone else.</div>
+      </div>
+      <div class="mb-5">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
         <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
           name="pass_login"
           placeholder="Enter your password ...."
-          style="
-            width: 450px;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            border-width: 2px;
-            border-radius: 5px;
-          "
-          type="password"
-          id="text3"
         />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-secondary"
+        style="background-color: orangered;"
+      >Submit</button>
+    </form>
 
-        <input type="submit" id="submitblog" value="Login" />
-      </form>
-    </div>
   </body>
   <script src="web.js"></script>
 </html>
