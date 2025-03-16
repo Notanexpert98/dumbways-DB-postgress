@@ -123,7 +123,7 @@ function login_blog(req, res) {
 
 async function register_page(req, res) {
   try {
-    const { name_login, email_login, phone_login, option_login, pass_login } =
+    const { name_login, email_login, phone_login, option_login, pass_login, checked_html, checked_javascript, checked_css, checked_node.js, checked_bootstrap } =
       req.body;
     const bcrypt = require("bcrypt");
     const saltround = 10;
@@ -171,6 +171,8 @@ async function login_page(req, res) {
     res.redirect("/login");
   }
 }
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
